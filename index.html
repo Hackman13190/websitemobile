@@ -20,13 +20,13 @@
                     <span translate="no" id="fileOption" class="non-selectable">File</span>
                 </div>
             </div>   
-            <div id="fileDropArea" class="file-drop-area" style="display: none" ondrop="handleDrop(event)" ondragover="handleDragOver(event)" onclick="selectFile()">
+            <div id="fileDropArea" class="file-drop-area" style="overflow-y: auto; display: none" ondrop="handleDrop(event)" ondragover="handleDragOver(event)" onclick="selectFile()">
                 <div id="clearAllFile" style="display: none;" onclick="clearAllFile()">
                     <button translate="no" class="clear-button" alt="Clear all File">Clear</button>
                 </div>   
                 <div id="filePreviewContainer">
                     <img id="filePreview" alt="File Preview" style="max-width: 25%; max-height: 180px; display: none;">
-                    <div style="margin-top: 10px; display: none;" id="selectedFileName"></div>
+                    <div style="margin-top: 10px; display: none; word-break: break-all;" id="selectedFileName"></div>
                 </div>             
                 <p translate="no" id="areaDrop">Drag and drop a file here or click to select one</p>
                 <input type="file" id="fileInput" class="input" onchange="handleFileSelect()" style="display: none;"/>
