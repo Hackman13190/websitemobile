@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body
+{
+    margin-top: 50px; /******/
+    margin-right: 10px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #23242a;
+    margin-bottom: 50px; /******/
+}
+
+.container
+{
+    position: relative;
+    width: 380px;
+    padding: 20px;
+    background: #1c1c1c;    
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.container h1
+{
+    color: #45f3ff;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+}
+
+.container input[type="text"], .container input[type="password"]
+{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: transparent;
+    border: 1px solid #ddd;
+    color: #fff;
+}
+
+.underline-text {
+    text-decoration: underline;
+}
+
+.non-selectable {
+    user-select: none;
+}
+
+
+
+
+
+.box
+{
+    position: relative;
+    width: 750px;
+    height: 800px; /*800*/
+    background: #1c1c1c;    
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.box::before
+{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 78%;
+    height: 2000px;
+    background: #45f3ff;
+    transform-origin: 50% 50%; /* Centre du box before */
+    animation: animate 6s linear infinite;
+}
+
+@keyframes animate
+{
+    0%
+    {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100%
+    {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+
+
+
+
+.form
+{
+    position: absolute;
+    inset: 3px;
+    border-radius: 8px;
+    background: #28292d;
+    z-index: 10;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form h2
+{
+    color: #45f3ff;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.1em;
+    margin-top: -8px; /*******************************/
+}
+
+.inputBox {
+    position: relative;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.inputBox input {
+    position: relative;
+    width: 62.5%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #23242a;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    z-index: 10;
+}
+
+.inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 20px 0px 10px;
+    font-size: 1em;
+    color: #8f8f8f;
+    pointer-events: none;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span {
+    color: #45f3ff;
+    transform: translateX(0px) translateY(-34px);
+    font-size: 0.75em;
+    z-index: 10;
+}
+
+
+
+
+.inputBox i
+{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 62.5%;
+    height: 2px;
+    background: #45f3ff;
+    border-radius: 4px;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 9;
+}
+
+.inputBox input:valid ~ i,
+.inputBox input:focus ~ i
+{
+    height: 44px;
+}
+
+.inputBox input[type="password"]:valid ~ img {
+    display: block;
+}
+
+.inputBox input[type="password"]:focus ~ img {
+    display: block;
+}
+
+.inputBox input[type="password"]:invalid ~ img {
+    display: none;
+}
+
+.inputBox input[type="text"]:invalid ~ img {
+    display: none;
+}
+
+.inputBox img {
+    position: absolute;
+    margin-left: 63%;
+    top: 45%; /* Set to 50% to position vertically in the middle */
+    transform: translateY(-25%);
+    left: 0;
+    height: 40px;
+    cursor: pointer;
+    vertical-align: middle;
+    z-index: 10;
+}
+
+
+
+
+
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Center the buttons */
+    margin-top: 75px;
+    width: 100%;
+    height: 8%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login-btn {
+    flex: 1;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0 5%; /* 5% margin on both sides */
+    transition: background-color 0.2s ease;
+
+    /* Additional styling */
+    background-color: #45f3ff;
+    color: #000;
+}
+
+.login-btn:first-child {
+    margin-right: 5%; /* Remove right margin for the first button */
+}
+
+.login-btn:last-child {
+    margin-left: 5%; /* Remove left margin for the last button */
+}
+
+.login-btn:hover {
+    opacity: 0.9;  /* You can adjust this value based on your preference */
+}
+
+.login-btn:active {
+    background-color: #40bfc4;  /* You can adjust this value based on your preference */
+}
+
+
+
+
+
+textarea {
+    background-color: rgba(0, 0, 0, 1); /* Utilisez la notation RGBA pour définir l'opacité du fond */
+    color: white;
+    border: none; 
+    resize: none;
+    margin-top: 70px; /*******************************/
+    width: 100%; /* Ajustez la largeur selon vos besoins */
+    height: 300px;
+    font-weight: 600;
+    border-radius: 5px;
+    outline: none;
+    display: block;
+    padding: 10px 10px 10px 10px; /**/
+    border-top: 35px solid #3d3d3d;
+}
+
+#areaDrop {
+    user-select: none; /* Désactive la sélection de texte */
+}
+
+#filePreviewContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px; /* Ajustez la marge selon vos besoins */
+}
+
+#selectedFileName {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+#fileDropArea {
+    background-color: rgba(0, 0, 0, 1);
+    color: white;
+    border: none;
+    resize: none;
+    margin-top: 70px;
+    width: 100%;
+    height: 300px;
+    font-weight: 600;
+    border-radius: 5px;
+    outline: none;
+    display: none;
+    padding: 25px 10px 10px 10px;
+    text-align: center;
+    justify-content: center;
+    border-top: 35px solid #3d3d3d;
+}
+
+
+
+@keyframes blink {
+    0%, 100% {
+        background-color: inherit;
+        color: inherit;
+    }
+    50% {
+        background-color: red;
+        color: white;
+    }
+}
+
+.blink {
+    animation: blink 0.5s linear 2; /* 2 indicates the number of blinks */
+}
+
+.textarea-container {
+    position: relative;
+}
+
+.copy-button {
+    position: absolute;
+    right: 45px; /* Ajustez cette valeur en fonction de votre préférence de marge depuis la droite */
+    width: 50px; /* Ajustez la largeur du bouton selon vos besoins 50px*/
+    height: 25px;
+    color: #fff;
+    background-color: #333333;
+    font-size: 10px;
+    margin-top: 75px;
+    outline: none;
+}
+
+.clear-button {
+    position: absolute;
+    right: 45px; /* Ajustez cette valeur en fonction de votre préférence de marge depuis la droite */
+    width: 50px; /* Ajustez la largeur du bouton selon vos besoins 50px*/
+    height: 25px;
+    color: #fff;
+    background-color: #333333;
+    font-size: 10px;
+    outline: none;
+    margin-top: -55px;
+}
+
+.copy-button:hover {
+    cursor: pointer;
+    text-shadow: 0 0 10px rgba(230, 230, 230, 0.8);
+    text-decoration: underline;
+}
+
+.clear-button:hover {
+    cursor: pointer;
+    text-shadow: 0 0 10px rgba(230, 230, 230, 0.8);
+    text-decoration: underline;
+}
+
+.copy-button:active {
+    background-color: rgb(20, 100, 15);
+}
+
+.clear-button:active {
+    background-color: rgb(200, 0, 0);
+}
+
+.center-container {
+    text-align: center;
+}
+
+.toggle-container {
+    display: flex;
+    transform: translateY(30px);/*******************************/
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: #2bc0ca;
+    margin-top: 30px;
+    width: 100%; 
+    cursor: pointer;
+    position: relative;
+    margin: 0 auto; 
+}
+
+.toggle-options {
+    display: flex;
+    overflow: hidden;
+    width: 100%; 
+}
+
+.toggle-options span {
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+    padding: 10px;
+    color: #fff;
+    position: relative; /* Ajout de position relative */
+    z-index: 1; /* Assurer que le texte est au-dessus du fond du bouton */
+}
+
+.toggle-slider {
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(30, 30, 30, 1); /* Ajustez l'opacité ici */
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+    position: absolute;
+    top: 0;
+    left:0;
+    box-shadow: 0 0 0 1px rgb(30, 30, 30, 1); /*x0 y0 floutage0 spreard le 1 s'étendre comme une flaque scale=taille spread=etendre*/
+}

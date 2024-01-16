@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cross-Origin-Resource-Policy" content="cross-origin">
+    <link rel="icon" href="./Images/secure_logo.png" type="image/png">
+    <link rel="stylesheet" href="./Assets/styles.css">
+    <title>VoltaCrypt</title>
+</head>
+<body>
+    <div class="box">
+        <div class="form">
+            <h2 translate="no" id="chiffrementTitle" class="underline-text">Text encryption</h2>
+            <div class="toggle-container" onclick="toggleOptions()">
+                <div class="toggle-slider" id="toggleSlider"></div>
+                <div class="toggle-options">
+                    <span translate="no" id="textOption" class="non-selectable">Text</span>
+                    <span translate="no" id="fileOption" class="non-selectable">File</span>
+                </div>
+            </div>   
+            <div id="fileDropArea" class="file-drop-area" style="display: none" ondrop="handleDrop(event)" ondragover="handleDragOver(event)" onclick="selectFile()">
+                <div id="clearAllFile" style="display: none;" onclick="clearAllFile()">
+                    <button translate="no" class="clear-button" alt="Clear all File">Clear</button>
+                </div>   
+                <div id="filePreviewContainer">
+                    <img id="filePreview" alt="File Preview" style="max-width: 25%; max-height: 180px; display: none;">
+                    <div style="margin-top: 10px; display: none;" id="selectedFileName"></div>
+                </div>             
+                <p translate="no" id="areaDrop">Drag and drop a file here or click to select one</p>
+                <input type="file" id="fileInput" class="input" onchange="handleFileSelect()" style="display: none;"/>
+            </div>
+            <div id="copyText" onclick="copyToClipboard()">
+                <button translate="no" class="copy-button" alt="Copy to Clipboard">Copy</button>
+            </div>
+            <textarea translate="no" id="userInput" placeholder="Write your text here..."></textarea>                                      
+            <div class="inputBox">
+                <input type="password" id="pass" required="required" name="password">
+                <span translate="no">Password</span>
+                <i></i>
+                <img src="/Images/red_eye.png" id="eye">
+            </div>
+            <div class="button-container">
+                <input translate="no" type="submit" value="Encrypt" class="login-btn" onclick="cryptText()">
+                <input translate="no" type="submit" value="Decrypt" class="login-btn" onclick="decryptText()">
+            </div>            
+            </form>
+        </div>
+    </div>
+    <script src="./Assets/script.js"></script>
+</body>
+</html>
